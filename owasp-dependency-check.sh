@@ -19,7 +19,7 @@ docker pull owasp/dependency-check
 docker run --rm \
     -e user=$USER \
     -u $(id -u ${USER}):$(id -g ${USER}) \
-    --volume $(pwd):/z \
+    --volume $(pwd):/:z \
     --volume "$DATA_DIRECTORY":/usr/share/dependency-check/data:z \
     --volume $(pwd)/"$REPORT_DIRECTORY":/report:z \
     owasp/dependency-check:$DEP_CHECK_VERSION \
